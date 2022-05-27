@@ -93,7 +93,7 @@ public class Game : MonoBehaviour {
         "Планы будут разрушены.",
         "Ожидается проигрыш.",
         "Будьте аккуратней."
-    }
+    };
 
     public void Start() {
         CrackedCookie.SetActive(false);
@@ -139,7 +139,6 @@ public class Game : MonoBehaviour {
         InfoField.GetComponent<TextMeshPro>().text = "Нажмите, чтобы получить еще одно предсказание";
         CrackedCookie.SetActive(true);
 
-        var Rand = new Random();
-        TextField.GetComponent<TextMeshPro>().text = Predictions[Rand.Next(0, Predictions.Count - 1)];
+        TextField.GetComponent<TextMeshPro>().text = Predictions[Random.Range(0, Predictions.Count - 1)];
     }
 }
